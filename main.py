@@ -19,18 +19,17 @@ screen.onkey(key="Up", fun=player.move_forwards)
 
 game_is_on = True
 while game_is_on:
+    time.sleep(0.1)
     street.create_car()
-    for i in range(10):
-        time.sleep(0.1)
-        if player.reached_finish_line():
-            time.sleep(1)
-            # Go to next level
-            street.next_level()
-            # Reset the player and screen
-            screen.resetscreen()
-            player.reset_player()
-            screen.update()
-            break
-        street.shift_cars()
+    if player.reached_finish_line():
+        time.sleep(1)
+        # Go to next level
+        street.next_level()
+        # Reset the player and screen
+        screen.resetscreen()
+        player.reset_player()
         screen.update()
+        continue
+    street.shift_cars()
+    screen.update()
 
