@@ -19,8 +19,9 @@ screen.onkey(key="Up", fun=player.move_forwards)
 
 game_is_on = True
 while game_is_on:
-    street.shift_cars()
+    street.create_car()
     for i in range(10):
         time.sleep(0.1)
+        street.shift_cars()
         screen.update()
 
