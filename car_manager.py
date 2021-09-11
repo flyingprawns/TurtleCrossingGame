@@ -21,7 +21,6 @@ class CarManager:
             car.move(self.car_speed)
 
     def next_level(self):
-        self.cars.clear()
         self.car_speed += MOVE_INCREMENT
 
 
@@ -35,7 +34,7 @@ class Car(Turtle):
         self.turtlesize(stretch_len=2.5)
         # Randomize color and starting location
         self.color(random.choice(COLORS))
-        self.goto(300, random.randint(-280, 280))
+        self.goto(300, random.randint(-230, 280))
 
     def move(self, distance):
         new_x = self.xcor() - distance
