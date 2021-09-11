@@ -18,6 +18,9 @@ class CarManager:
         for car in self.cars:
             car.move(self.car_speed)
 
+    def reset(self):
+        # TODO:
+        pass
 
 class Car(Turtle):
     def __init__(self):

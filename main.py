@@ -22,6 +22,10 @@ while game_is_on:
     street.create_car()
     for i in range(10):
         time.sleep(0.1)
+        if player.reached_finish_line():
+            time.sleep(1)
+            player.reset()
+            break
         street.shift_cars()
         screen.update()
 
