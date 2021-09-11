@@ -8,11 +8,7 @@ FINISH_LINE_Y = 280
 class Player(Turtle):
     def __init__(self):
         super().__init__(shape="turtle")
-        self.color("black")
-        self.speed("fastest")
-        self.penup()
-        self.goto(STARTING_POSITION)
-        self.setheading(90)
+        self.reset_player()
 
     def move_forwards(self):
         new_x = self.xcor()
@@ -22,5 +18,9 @@ class Player(Turtle):
     def reached_finish_line(self):
         return self.ycor() > FINISH_LINE_Y
 
-    def reset(self):
+    def reset_player(self):
+        self.color("black")
+        self.speed("fastest")
+        self.penup()
         self.goto(STARTING_POSITION)
+        self.setheading(90)

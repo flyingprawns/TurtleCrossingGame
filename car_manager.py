@@ -18,9 +18,10 @@ class CarManager:
         for car in self.cars:
             car.move(self.car_speed)
 
-    def reset(self):
-        # TODO:
-        pass
+    def next_level(self):
+        self.cars.clear()
+        self.car_speed += MOVE_INCREMENT
+
 
 class Car(Turtle):
     def __init__(self):

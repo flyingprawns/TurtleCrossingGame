@@ -24,7 +24,12 @@ while game_is_on:
         time.sleep(0.1)
         if player.reached_finish_line():
             time.sleep(1)
-            player.reset()
+            # Go to next level
+            street.next_level()
+            # Reset the player and screen
+            screen.resetscreen()
+            player.reset_player()
+            screen.update()
             break
         street.shift_cars()
         screen.update()
